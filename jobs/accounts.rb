@@ -1,12 +1,14 @@
 require 'RestClient'
 
+API_URL=ENV['DASHBOARD_FEEDER_URL']
+
 SCHEDULER.every '10s', :first_in => 0 do |job|
   total_created = 0
   total_activated = 0
   total_created_today = 0
   total_activated_today = 0
   begin
-    response = RestClient.get 'http://admin:app161770@localhost:3000/accounts'
+    response = RestClient.get "#{API_URL}/accounts"
     data = JSON.parse(response, :symbolize_names => true)
     total_created = data[:result][:total_created].to_i
     total_created_today = data[:result][:total_created_day].to_i
