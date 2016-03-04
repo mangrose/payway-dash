@@ -17,7 +17,7 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   end
 
   send_event('money', {current: amount})
-  send_event('money', {today: amount_today})
+  #send_event('money', {today: amount_today})
   send_event('total-transactions', {current: transactions})
 
 end

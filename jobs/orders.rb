@@ -13,6 +13,6 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
     puts "could not fetch order data"
   end
   send_event('total-orders', { current: total_orders })
-  send_event('total-orders', {today: total_orders_today})
+  #send_event('total-orders', {today: total_orders_today})
 
 end

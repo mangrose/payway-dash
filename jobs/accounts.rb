@@ -20,8 +20,8 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   end
 
   send_event('total-accounts', {current: total_created})
-  send_event('total-accounts', {today: total_created_today})
+  #send_event('total-accounts', {today: total_created_today})
   send_event('total-activations', {current: total_activated})
-  send_event('total-activations', {today: total_activated_today})
+  #send_event('total-activations', {today: total_activated_today})
 
 end
