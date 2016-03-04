@@ -1,4 +1,3 @@
-require 'RestClient'
 
 API_URL=ENV['DASHBOARD_FEEDER_URL']
 

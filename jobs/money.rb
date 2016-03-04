@@ -1,7 +1,5 @@
-require 'bigdecimal'
-require 'RestClient'
-
 API_URL=ENV['DASHBOARD_FEEDER_URL']
+
 SCHEDULER.every '10s', :first_in => 0 do |job|
   amount = 0
   transactions = 0
