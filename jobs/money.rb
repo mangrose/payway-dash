@@ -1,4 +1,4 @@
-SCHEDULER.every '10s', :first_in => 0 do |job|
+SCHEDULER.every '30s', :first_in => 0 do |job|
   amount = 0
   transactions = 0
   amount_today = 0

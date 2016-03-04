@@ -1,5 +1,5 @@
 
-SCHEDULER.every '10s', :first_in => 0 do |job|
+SCHEDULER.every '20s', :first_in => 0 do |job|
   total_orders = 0
   total_orders_today = 0
   begin
@@ -11,6 +11,7 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
     end
   rescue => e
     puts "could not fetch order data"
+    puts e.message
   end
   send_event('total-orders', { current: total_orders })
   send_event('orders-today', {current: total_orders_today})
