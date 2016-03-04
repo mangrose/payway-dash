@@ -2,7 +2,7 @@ require 'dashing'
 require 'rest-client'
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+  set :auth_token, ENV['DASHING_API_TOKEN']
   set :default_dashboard, 'payway'
   helpers do
 
@@ -15,7 +15,7 @@ configure do
 
     def authorized?
       @auth ||=  Rack::Auth::Basic::Request.new(request.env)
-      @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == ['admin', 'admin']
+      @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == ['admin', ENV['ADMIN_PASSWORD']]
     end
 
   end
