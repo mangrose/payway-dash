@@ -10,6 +10,7 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
     amount = data[:result][:total_amount].to_i
     amount_today = data[:result][:total_amount_day].to_i
     transactions = data[:result][:total_transactions].to_i
+    puts " Got payment data => total: #{amount} today: #{amount_today}"
   rescue => e
     puts "could not fetch money data"
     puts e
