@@ -1,4 +1,4 @@
-SCHEDULER.every '20s', :first_in => 0 do |job|
+SCHEDULER.every '5m', :first_in => 0 do |job|
   total_created = 0
   total_activated = 0
   total_created_today = 0

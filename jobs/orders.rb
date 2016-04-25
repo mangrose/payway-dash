@@ -1,5 +1,5 @@
 
-SCHEDULER.every '20s', :first_in => 0 do |job|
+SCHEDULER.every '5m', :first_in => 0 do |job|
   total_orders = 0
   total_orders_today = 0
   begin
